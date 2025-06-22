@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>テトリスゲーム</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>&nbsp;&nbsp;&nbsp;&nbsp;<span class="highlight">TETRIS</span>_GAME<span class="blink">_</span></h1>
+        <div class="game-area">
+            <div class="side-panel left-panel">
+                <div class="hold-piece">
+                    <div class="tech-header"><i class="fas fa-hand-rock"></i> HOLD</div>
+                    <div class="piece-container">
+                        <canvas id="holdPiece" width="120" height="120"></canvas>
+                    </div>
+                    <p class="tech-tip">Press <span class="key-small">C</span> to hold</p>
+                </div>
+                
+                <div class="controls">
+                    <div class="tech-header"><i class="fas fa-gamepad"></i> CONTROLS</div>
+                    <div class="key-guide">
+                        <p><span class="key">← →</span> <span class="key-desc">Move Left/Right</span></p>
+                        <p><span class="key">↑</span> <span class="key-desc">Rotate Piece</span></p>
+                        <p><span class="key">↓</span> <span class="key-desc">Soft Drop</span></p>
+                        <p><span class="key">SPACE</span> <span class="key-desc">Hard Drop</span></p>
+                        <p><span class="key">C</span> <span class="key-desc">Hold Piece</span></p>
+                        <p><span class="key">P</span> <span class="key-desc">Pause Game</span></p>
+                        <p><span class="key">ESC</span> <span class="key-desc">Pause Game</span></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="game-container">
+                <div class="game-border">
+                    <canvas id="tetris" width="300" height="600"></canvas>
+                    <div id="game-over" class="game-over">
+                        <div class="game-over-content">
+                            <h2>GAME OVER</h2>
+                            <p>SCORE: <span id="final-score">0</span></p>
+                            <button id="retry-btn" class="tech-btn"><i class="fas fa-redo"></i> RETRY</button>
+                        </div>
+                    </div>
+                    <div id="game-pause" class="game-pause">
+                        <div class="game-pause-content">
+                            <h2>PAUSED</h2>
+                            <button id="resume-btn" class="tech-btn"><i class="fas fa-play"></i> RESUME</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="side-panel right-panel">
+                <div class="top-section">
+                    <div class="next-piece">
+                        <div class="tech-header"><i class="fas fa-forward"></i> NEXT</div>
+                        <div class="piece-container">
+                            <canvas id="nextPiece" width="120" height="120"></canvas>
+                        </div>
+                    </div>
+                    
+                    <div class="score-box">
+                        <div class="tech-header"><i class="fas fa-chart-bar"></i> STATS</div>
+                        <p><span class="label">SCORE:</span> <span id="score">0</span></p>
+                        <p><span class="label">LEVEL:</span> <span id="level">1</span></p>
+                        <p><span class="label">LINES:</span> <span id="lines">0</span></p>
+                    </div>
+                </div>
+                
+
+            </div>
+        </div>
+    </div>
+    <script src="tetris.js"></script>
+</body>
+</html>
